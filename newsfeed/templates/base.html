@@ -1,0 +1,31 @@
+{% load staticfiles %}
+
+<html>
+<head>
+	<title>NewsFeed </title>
+	<link rel = "stylesheet" type = "text/css" href = "{% static "css/master.css" %}">
+	
+	{% block head %}
+
+	{% endblock head %}
+</head>
+
+<body>
+	<div id = "content">
+		<div id = "header">
+			{% if user.is_authenticated %}
+				<div id = "user-info">{{user.username }} | <a href = "/story/">sumbit</a> | <a href = "/logout/">logout</a></div>
+
+			{% else %}
+
+				<div id = "user-info"><a href = "/login/">Login</a></div>
+				<div id = "user-info"><a href = "/register/">Sign Up</a></div>
+
+			{% endif %}
+			<div id = "site-title"><h1><a href = "/">newsfeed</a></h1></div>
+		</div>
+		{% block content %}
+		{% endblock content %}
+	</div>
+</body>
+</html>

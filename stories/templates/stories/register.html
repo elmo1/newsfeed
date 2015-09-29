@@ -1,0 +1,30 @@
+<!-- Need to fix this up -->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+	<h2> Register </h2>
+	<form action = "/register/" method = "POST"> 
+	{% csrf_token %} 
+
+	<p>
+	{{ form.username.label_tag }}
+	{{ form.username}}
+	</p>
+	
+	<p>
+	{{ form.password1.label_tag }}
+	{{ form.password1 }}
+	</p>
+
+	<p>
+	{{ form.password2.label_tag }}
+	{{ form.password2 }}
+	</p>
+
+	<input type = "submit" value = "register" />
+
+	</form>
+
+{% endblock %}

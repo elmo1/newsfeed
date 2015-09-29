@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load story_extras %}
+
+{% block head %}
+	<script src = "static/js/jquery.min.js"></script>
+	<script src = "static/js/vote.js"></script>
+{% endblock head %}
+
+
+{% block content %}
+<ol>
+{% for story in stories %}
+	<li>
+		<p class = "story-title">
+		{% if user.is_authenticated and story not in liked_stories %}
+			<a href = "/vote/" id = "story-vote-{{ story.id }}" class = "vote"><img src = "static/images/arrow.png" height = "20px" width = "20px"></a>
+			<a href = "{{ story.url }}" id = "story-title-{{ story.id }}" target="_blank">{{story.title}} </a> <span class = "domain"> ({{ story.domain}}) </span>
+		{% else %}
+			<a href = "{{ story.url }}" style = "margin-left: 15px;" target="_blank">{{story.title}} </a> <span class = "domain"> ({{ story.domain}}) </span>
+		{% endif %}
+		</p>
+
+		<p class = "story-info">
+			{{story.points}} points by {{ story.moderator.username }} {{story.created_at|age}} | Comment 
+			| <a href = "/{{ story.category.category_name }}/">{{ story.category }} </a>
+		</p>
+	</li>
+
+	
+{% endfor %}
+</ol>
+{% endblock %}
