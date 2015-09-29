@@ -2,8 +2,8 @@
 {% load story_extras %}
 
 {% block head %}
-	<script src = "static/js/jquery.min.js"></script>
-	<script src = "static/js/vote.js"></script>
+	<script src = "/static/js/jquery.min.js"></script>
+	<script src = "/static/js/vote.js"></script>
 {% endblock head %}
 
 
@@ -23,7 +23,7 @@
 			</p>
 
 			<p class = "story-info">
-				{{story.points}} points by {{ story.moderator.username }} {{story.created_at|age}} | Comment 
+				{{story.points}} points by {{ story.moderator.username }} {{story.created_at|age}} | <a href = "{{ story.id }}/"> comment </a>
 				| <a href = "/{{ story.category.category_name }}/">{{ story.category }} </a>
 			</p>
 		</li>

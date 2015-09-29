@@ -8,10 +8,9 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm 
 from django.core.context_processors import csrf
-#from forms import MyRegistrationForm 
 
 from stories.models import Story
-from stories.models import Category #
+from stories.models import Category 
 from stories.forms import StoryForm 
 
 def score(story, gravity=1.8, timebase=120):
