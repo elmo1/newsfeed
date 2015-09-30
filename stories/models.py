@@ -21,6 +21,7 @@ class Story(models.Model):
 	points = models.IntegerField(default = 1)
 	moderator = models.ForeignKey(User, related_name = 'moderated_stories')
 	category = models.ForeignKey(Category)
+	#comments = models.ForeignKey(Comments)
 	voters = models.ManyToManyField(User, related_name = 'liked_stories')
 	created_at = models.DateTimeField(auto_now_add = True)
 	updated_at = models.DateTimeField(auto_now = True)
