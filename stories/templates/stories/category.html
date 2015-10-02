@@ -23,8 +23,8 @@
 			</p>
 
 			<p class = "story-info">
-				{{story.points}} points by {{ story.moderator.username }} {{story.created_at|age}} | <a href = "{{ story.id }}/"> comment </a>
-				| <a href = "/{{ story.category.category_name }}/">{{ story.category }} </a>
+				{{story.points}} points by <a href = "/{{story.moderator.username}}/">{{ story.moderator.username }}</a> {{story.created_at|age}} | <a href = "{{ story.id }}/"> comment </a>
+				| <a href = "s/{{ story.category.category_name }}/">{{ story.category }} </a>
 			</p>
 		</li>
 	{% endfor %}

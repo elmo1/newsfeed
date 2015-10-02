@@ -14,7 +14,7 @@
 	<div id = "content">
 		<div id = "header">
 			{% if user.is_authenticated %}
-				<div id = "user-info">{{ user.username }} | <a href = "/story/">sumbit</a> | <a href = "/logout/">logout</a></div>
+				<div id = "user-info"><a href = "/{{ user.username }}">{{ user.username }}</a> | <a href = "/story/">sumbit</a> | <a href = "/logout/">logout</a></div>
 
 			{% else %}
 

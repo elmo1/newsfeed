@@ -6,5 +6,5 @@ urlpatterns = [
     url(r'^vote/$', 'stories.views.vote'),
     url(r'^s/(?P<category_name>\w+)/$', 'stories.views.category'),
     url(r'^s/(?P<category_name>\w+)/(?P<story_id>[0-9]+)/$', 'stories.views.comment'),
-    url(r'^u/(?P<username>\w+)/$', 'stories.views.profile'),
+    url(r'^(?P<username>\w+)/$', 'stories.views.profile'),
 ]

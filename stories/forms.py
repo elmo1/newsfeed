@@ -15,7 +15,7 @@ class StoryForm(ModelForm):
 # 		exclude = ('moderator',)
 
 class UserCreationForm(UserCreationForm):
-    email = forms.EmailField(required=True)
+    email = forms.EmailField(required=False)
 
     class Meta:
         model = User
