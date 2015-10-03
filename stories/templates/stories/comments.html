@@ -22,11 +22,4 @@
 	{{story.points}} points by <a href = "/{{story.moderator.username}}/">{{ story.moderator.username }}</a> {{story.created_at|age}}
 	| <a href = "/s/{{ story.category.category_name }}/">{{ story.category }} </a>
 </p>
-
-<!-- <form action = "/{{ story.category.category_name }}/{{ story.id }}/" method = "POST">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<input type = "submit" value = "Submit" />
-</form> -->
-
 {% endblock content %}
